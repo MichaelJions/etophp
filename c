@@ -52,6 +52,9 @@ function CreatePathDefault($argv, $Path, $NamePath = "") {
 }
 
 function CreateProject($ProjectName) {
+	if(!file_exists("Application")){
+		mkdir("Application",0777,true);
+	}
 	if (!file_exists("Application/{$ProjectName}")) {
 		mkdir("Application/{$ProjectName}", 0777, true);
 		mkdir("Application/{$ProjectName}/Controller", 0777, true);
